@@ -113,92 +113,41 @@ Los siguientes requerimientos constituyen la línea base común. La cátedra def
 
 | **ID** | **Requerimiento** | **Descripción funcional** |
 |---|---|---|
-
-RF-6.1
-Estados del viaje
-El sistema deberá administrar estados válidos y transiciones controladas del viaje.
-RF-6.2
-Consulta de estado
-Clientes, conductores y operadores autorizados deberán poder consultar el estado actual y un resumen del viaje.
-RF-6.3
-Arribo del conductor
-El conductor asignado deberá poder indicar que llegó al punto de retiro.
-RF-6.4
-Inicio validado
-El viaje sólo deberá iniciarse cuando se cumpla la condición de verificación acordada, por ejemplo un QR de un solo uso.
-RF-6.5
-Finalización
-El conductor deberá poder finalizar el viaje registrando los datos necesarios de tiempo, distancia y cierre.
-RF-6.6
-Cancelación por cliente
-El cliente deberá poder cancelar con un motivo, respetando el estado y el eventual cargo definido.
-RF-6.7
-Cancelación por conductor
-El conductor deberá poder cancelar con un motivo y devolver la solicitud al despacho cuando corresponda.
-RF-6.8
-Historial de transiciones
-El sistema deberá mantener un historial no destructivo de estados, actores, fechas y motivos.
+| RF-6.1 | Estados del viaje | El sistema deberá administrar estados válidos y transiciones controladas del viaje.|
+| RF-6.2 | Consulta de estado | Clientes, conductores y operadores autorizados deberán poder consultar el estado actual y un resumen del viaje.|
+| RF-6.3 | Arribo del conductor | El conductor asignado deberá poder indicar que llegó al punto de retiro.|
+| RF-6.4 | Inicio validado | El viaje sólo deberá iniciarse cuando se cumpla la condición de verificación acordada, por ejemplo un QR de un solo uso.|
+| RF-6.5 | Finalización | El conductor deberá poder finalizar el viaje registrando los datos necesarios de tiempo, distancia y cierre.|
+| RF-6.6 | Cancelación por cliente | El cliente deberá poder cancelar con un motivo, respetando el estado y el eventual cargo definido. |
+| RF-6.7 | Cancelación por conductor | El conductor deberá poder cancelar con un motivo y devolver la solicitud al despacho cuando corresponda.|
+| RF-6.8 | Historial de transiciones | El sistema deberá mantener un historial no destructivo de estados, actores, fechas y motivos.|
 
 
 #### M7: Tarifas, Pagos y Liquidaciones
 
 | **ID** | **Requerimiento** | **Descripción funcional** |
 |---|---|---|
-
-RF-7.1
-Estimación de tarifa
-El sistema deberá calcular una estimación basada en tipo de vehículo, distancia, tiempo y parámetros configurables.
-RF-7.2
-Método de pago
-El cliente deberá poder registrar o seleccionar un medio de pago permitido por el escenario.
-RF-7.3
-Autorización y captura
-El sistema deberá simular o integrar la autorización y captura del pago conforme al estado del viaje.
-RF-7.4
-Cargo de cancelación
-El sistema deberá calcular y registrar un cargo de cancelación cuando las reglas lo indiquen.
-RF-7.5
-Reintegro
-El sistema deberá registrar un reintegro total o parcial ante una cancelación o ajuste válido posterior al cobro.
-RF-7.6
-Idempotencia de pago
-La repetición de una misma orden de cobro o reintegro no deberá generar operaciones financieras duplicadas.
-RF-7.7
-Historial financiero
-El sistema deberá conservar la trazabilidad de autorizaciones, capturas, rechazos, cargos y reintegros.
-RF-7.8
-Liquidación al conductor
-El sistema deberá calcular o simular el importe a liquidar al conductor y registrar su estado.
+| RF-7.1 | Estimación de tarifa | El sistema deberá calcular una estimación basada en tipo de vehículo, distancia, tiempo y parámetros configurables.|
+| RF-7.2 | Método de pago | El cliente deberá poder registrar o seleccionar un medio de pago permitido por el escenario.|
+| RF-7.3 | Autorización y captura | El sistema deberá simular o integrar la autorización y captura del pago conforme al estado del viaje.|
+| RF-7.4 | Cargo de cancelación | El sistema deberá calcular y registrar un cargo de cancelación cuando las reglas lo indiquen.|
+| RF-7.5 | Reintegro | El sistema deberá registrar un reintegro total o parcial ante una cancelación o ajuste válido posterior al cobro.|
+| RF-7.6 | Idempotencia de pago | La repetición de una misma orden de cobro o reintegro no deberá generar operaciones financieras duplicadas.|
+| RF-7.7 | Historial financiero | El sistema deberá conservar la trazabilidad de autorizaciones, capturas, rechazos, cargos y reintegros.|
+| RF-7.8 | Liquidación al conductor | El sistema deberá calcular o simular el importe a liquidar al conductor y registrar su estado.|
 
 #### M8:  Notificaciones, Documentos y Soporte
 
 | **ID** | **Requerimiento** | **Descripción funcional** |
 |---|---|---|
-
-RF-8.1
-Notificaciones de viaje
-El sistema deberá notificar los hitos de solicitud, asignación, arribo, inicio, cancelación y finalización por uno o más canales.
-RF-8.2
-Notificaciones de reserva
-El sistema deberá notificar creación, modificación, confirmación, recordatorio, activación y cancelación de reservas.
-RF-8.3
-QR de verificación
-El sistema deberá generar un QR temporal y de un solo uso asociado al viaje, sin exponer datos sensibles.
-RF-8.4
-Comprobante PDF
-El sistema deberá generar un comprobante posterior a la finalización o pago con identificadores, fechas e importe.
-RF-8.5
-Reenvío de comprobante
-El usuario autorizado deberá poder volver a solicitar el enlace o envío del comprobante.
-RF-8.6
-Seguimiento de entrega
-El sistema deberá registrar el estado de los intentos de notificación y permitir reintentos controlados.
-RF-8.7
-Soporte asociado
-El sistema deberá crear y consultar tickets asociados a un viaje, reserva o pago y registrar su estado.
-RF-8.8
-Consumo asíncrono
-El módulo deberá procesar eventos desde una cola para que comunicaciones y documentos no bloqueen el flujo principal.
+| RF-8.1 | Notificaciones de viaje | El sistema deberá notificar los hitos de solicitud, asignación, arribo, inicio, cancelación y finalización por uno o más canales.|
+| RF-8.2 | Notificaciones de reserva | El sistema deberá notificar creación, modificación, confirmación, recordatorio, activación y cancelación de reservas.|
+| RF-8.3 | QR de verificación | El sistema deberá generar un QR temporal y de un solo uso asociado al viaje, sin exponer datos sensibles.|
+| RF-8.4 | Comprobante PDF | El sistema deberá generar un comprobante posterior a la finalización o pago con identificadores, fechas e importe.|
+| RF-8.5 | Reenvío de comprobante | El usuario autorizado deberá poder volver a solicitar el enlace o envío del comprobante.|
+| RF-8.6 | Seguimiento de entrega | El sistema deberá registrar el estado de los intentos de notificación y permitir reintentos controlados.|
+| RF-8.7 | Soporte asociado | El sistema deberá crear y consultar tickets asociados a un viaje, reserva o pago y registrar su estado.|
+| RF-8.8 | Consumo asíncrono | El módulo deberá procesar eventos desde una cola para que comunicaciones y documentos no bloqueen el flujo principal.|
 
 #### M9: Reservas de Viajes
 
