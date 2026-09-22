@@ -16,7 +16,7 @@ La plataforma conectará clientes que necesitan trasladarse con conductores habi
 - **Conductor**: persona habilitada que administra vehículos, publica disponibilidad y ubicación, responde ofertas, ejecuta viajes y califica.
 - **Operador o administrador**: rol que gestiona habilitaciones, bloqueos, parámetros, incidentes y consultas operativas.
 - **Servicios externos**: proveedores de identidad, mapas, pagos, mensajería y almacenamiento, reales o simulados según la etapa.
--- **Equipo integrador**: conjunto de grupos que opera una instancia completa y acuerda versiones, configuración y datos de demostración.
+- **Equipo integrador**: conjunto de grupos que opera una instancia completa y acuerda versiones, configuración y datos de demostración.
 
 ### Dominio de la solucion
 
