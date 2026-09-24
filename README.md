@@ -206,7 +206,7 @@ Los siguientes requerimientos constituyen la línea base común. La cátedra def
 | M7 | Grupo 6 |
 | M8 | Grupo 7 |
 | M9 | Grupo 8 |
-| M2 | Grupo 16 |
+| M2 | Grupo 17 |
 | M3 | Grupo 15 |
 | M4 | Grupo 14 |
 | M5 | Grupo 13 |
@@ -214,4 +214,3 @@ Los siguientes requerimientos constituyen la línea base común. La cátedra def
 | M7 | Grupo 11 |
 | M8 | Grupo 10 |
 | M9 | Grupo 9 |
-| M6 | Grupo 17 |
