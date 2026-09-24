@@ -193,3 +193,25 @@ Los siguientes requerimientos constituyen la línea base común. La cátedra def
 | RNF-19| Privacidad y auditoría| No se expondrán datos sensibles en logs, QR o URLs. Las operaciones críticas conservarán trazabilidad.| TP3 |
 | RNF-20| Documentación| README, diagramas, contratos, decisiones y procedimientos deberán mantenerse junto con la versión correspondiente.| TP1-TP3 |
 
+
+### Grupos y Módulos
+
+| **Módulo** | **Grupo** |
+| ---|---|
+| M2 | Grupo 1 |
+| M3 | Grupo 2 |
+| M4 | Grupo 3 |
+| M5 | Grupo 4 |
+| M6 | Grupo 5 |
+| M7 | Grupo 6 |
+| M8 | Grupo 7 |
+| M9 | Grupo 8 |
+| M2 | Grupo 16 |
+| M3 | Grupo 15 |
+| M4 | Grupo 14 |
+| M5 | Grupo 13 |
+| M6 | Grupo 12 |
+| M7 | Grupo 11 |
+| M8 | Grupo 10 |
+| M9 | Grupo 9 |
+| M6 | Grupo 17 |
