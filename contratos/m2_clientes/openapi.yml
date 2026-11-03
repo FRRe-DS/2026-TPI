@@ -43,6 +43,9 @@ servers:
     description: Relativa al host donde se despliegue (en local, puerto 8082).
 security:
   - bearerAuth: []
+  - OAuth2Bearer: 
+      - cleintes:read
+      - clientes:write
 tags:
   - name: Salud
     description: Disponibilidad del servicio.
@@ -98,6 +101,8 @@ paths:
         Un cliente tiene como máximo un perfil: si ya existe, `409`.
       security:
         - bearerAuth: [CLIENTE]
+        - OAuth2Bearer: 
+          - cleintes:write
       parameters:
         - $ref: '#/components/parameters/IdempotencyKey'
       requestBody:
@@ -147,6 +152,8 @@ paths:
       summary: Consultar el perfil
       security:
         - bearerAuth: [CLIENTE, OPERADOR]
+        - OAuth2Bearer: 
+          - cleintes:read
       responses:
         '200':
           description: Perfil del cliente.
@@ -176,6 +183,8 @@ paths:
       description: Actualiza solo los campos enviados.
       security:
         - bearerAuth: [CLIENTE]
+        - OAuth2Bearer: 
+          - cleintes:write
       requestBody:
         required: true
         content:
@@ -219,6 +228,8 @@ paths:
       summary: Listar direcciones frecuentes
       security:
         - bearerAuth: [CLIENTE, OPERADOR]
+        - OAuth2Bearer: 
+          - cleintes:read
       parameters:
         - name: tipo
           in: query
@@ -259,6 +270,8 @@ paths:
         coordenadas). No guarda identificadores internos de M4.
       security:
         - bearerAuth: [CLIENTE]
+        - OAuth2Bearer: 
+          - cleintes:write
       parameters:
         - $ref: '#/components/parameters/IdempotencyKey'
       requestBody:
@@ -314,6 +327,8 @@ paths:
       summary: Consultar una dirección
       security:
         - bearerAuth: [CLIENTE, OPERADOR]
+        - OAuth2Bearer: 
+          - cleintes:read
       responses:
         '200':
           description: Dirección.
@@ -342,6 +357,8 @@ paths:
       summary: Actualizar una dirección
       security:
         - bearerAuth: [CLIENTE]
+        - OAuth2Bearer: 
+          - cleintes:write
       requestBody:
         required: true
         content:
@@ -380,6 +397,8 @@ paths:
       summary: Eliminar una dirección
       security:
         - bearerAuth: [CLIENTE]
+        - OAuth2Bearer: 
+          - cleintes:write
       responses:
         '204':
           description: Dirección eliminada.
@@ -410,6 +429,8 @@ paths:
       description: Si el cliente nunca las guardó, devuelve los valores por defecto.
       security:
         - bearerAuth: [CLIENTE, OPERADOR]
+        - OAuth2Bearer: 
+          - cleintes:read
       responses:
         '200':
           description: Preferencias del cliente.
@@ -439,6 +460,8 @@ paths:
       description: Reemplaza todas las preferencias. Es idempotente por naturaleza.
       security:
         - bearerAuth: [CLIENTE]
+        - OAuth2Bearer: 
+          - cleintes:write
       requestBody:
         required: true
         content:
@@ -486,6 +509,8 @@ paths:
         `503`.
       security:
         - bearerAuth: [CLIENTE, OPERADOR]
+        - OAuth2Bearer: 
+          - cleintes:read
       parameters:
         - $ref: '#/components/parameters/Page'
         - $ref: '#/components/parameters/Size'
@@ -522,6 +547,8 @@ paths:
       summary: Listar las calificaciones que hizo el cliente
       security:
         - bearerAuth: [CLIENTE, OPERADOR]
+        - OAuth2Bearer: 
+          - cleintes:read
       parameters:
         - $ref: '#/components/parameters/Page'
         - $ref: '#/components/parameters/Size'
@@ -558,6 +585,8 @@ paths:
         base: un segundo intento con otra `Idempotency-Key` devuelve `409`.
       security:
         - bearerAuth: [CLIENTE]
+        - OAuth2Bearer: 
+          - cleintes:write
       parameters:
         - $ref: '#/components/parameters/IdempotencyKey'
       requestBody:
@@ -615,6 +644,8 @@ paths:
       summary: Consultar una calificación
       security:
         - bearerAuth: [CLIENTE, OPERADOR]
+        - OAuth2Bearer: 
+          - cleintes:read
       responses:
         '200':
           description: Calificación.
@@ -652,6 +683,8 @@ paths:
         SERVICIO emitido por M1. Es la única operación que admite SERVICIO.
       security:
         - bearerAuth: [CLIENTE, OPERADOR, SERVICIO]
+        - OAuth2Bearer: 
+          - cleintes:read
       responses:
         '200':
           description: Estado de cuenta.
@@ -685,6 +718,8 @@ paths:
       summary: Historial de bloqueos (vigentes y levantados)
       security:
         - bearerAuth: [OPERADOR]
+        - OAuth2Bearer: 
+          - cleintes:read
       parameters:
         - name: vigente
           in: query
@@ -721,6 +756,8 @@ paths:
       summary: Bloquear administrativamente al cliente
       security:
         - bearerAuth: [OPERADOR]
+        - OAuth2Bearer: 
+          - cleintes:write
       parameters:
         - $ref: '#/components/parameters/IdempotencyKey'
       requestBody:
@@ -776,6 +813,8 @@ paths:
       summary: Consultar un bloqueo
       security:
         - bearerAuth: [OPERADOR]
+        - OAuth2Bearer: 
+          - cleintes:read
       responses:
         '200':
           description: Bloqueo.
@@ -807,6 +846,8 @@ paths:
         Levantar uno ya levantado devuelve `409`.
       security:
         - bearerAuth: [OPERADOR]
+        - OAuth2Bearer: 
+          - cleintes:write
       requestBody:
         required: true
         content:
@@ -844,6 +885,15 @@ paths:
 
 components:
   securitySchemes:
+    OAuth2Bearer:
+      type: oauth2
+      description: OAuth2 implicit/explicit flow yielding a Bearer token.
+      flows:
+        clientCredentials: # You can use authorizationCode, implicit, password, etc.
+          tokenUrl: http://localhost:8080/realms/ds-2026-realm/oauth2/token
+          scopes:
+            cleintes:read: Lectura de clientes
+            cleintes:write: Escritura de clientes
     bearerAuth:
       type: http
       scheme: bearer
