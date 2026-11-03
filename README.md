@@ -1,3 +1,6 @@
+[![Build Status](https://github.com/FRRe-DS/2026-TPI/actions/workflows/validate-m2-openapi.yml/badge.svg)](https://github.com/FRRe-DS/2026-TPI/actions/workflows/validate-m2-openapi.yml)
+
+
 # Desarrollo de Software - 2026
 
 ## Consideraciones

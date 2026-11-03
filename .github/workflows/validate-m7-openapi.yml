@@ -1,0 +1,27 @@
+name: Validate OpenAPI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+    paths:
+      - '/contratos/m7_tarifas/**' 
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install swagger-cli
+        run: npm install -g @apidevtools/swagger-cli
+
+      - name: Validate M7 OpenAPI definition
+        run: swagger-cli validate ./contratos/m7_tarifas/openapi.yml
