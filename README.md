@@ -1,4 +1,11 @@
-[![Build Status](https://github.com/FRRe-DS/2026-TPI/actions/workflows/validate-m2-openapi.yml/badge.svg)](https://github.com/FRRe-DS/2026-TPI/actions/workflows/validate-m2-openapi.yml)
+[![Validate OpenAPI M2](https://github.com/FRRe-DS/2026-TPI/actions/workflows/validate-m2-openapi.yml/badge.svg)](https://github.com/FRRe-DS/2026-TPI/actions/workflows/validate-m2-openapi.yml)
+[![Validate OpenAPI M3](https://github.com/FRRe-DS/2026-TPI/actions/workflows/validate-m3-openapi.yml/badge.svg)](https://github.com/FRRe-DS/2026-TPI/actions/workflows/validate-m3-openapi.yml)
+[![Validate OpenAPI M4](https://github.com/FRRe-DS/2026-TPI/actions/workflows/validate-m4-openapi.yml/badge.svg)](https://github.com/FRRe-DS/2026-TPI/actions/workflows/validate-m4-openapi.yml)
+[![Validate OpenAPI M5](https://github.com/FRRe-DS/2026-TPI/actions/workflows/validate-m5-openapi.yml/badge.svg)](https://github.com/FRRe-DS/2026-TPI/actions/workflows/validate-m5-openapi.yml)
+[![Validate OpenAPI M6](https://github.com/FRRe-DS/2026-TPI/actions/workflows/validate-m6-openapi.yml/badge.svg)](https://github.com/FRRe-DS/2026-TPI/actions/workflows/validate-m6-openapi.yml)
+[![Validate OpenAPI M7](https://github.com/FRRe-DS/2026-TPI/actions/workflows/validate-m7-openapi.yml/badge.svg)](https://github.com/FRRe-DS/2026-TPI/actions/workflows/validate-m7-openapi.yml)
+[![Validate OpenAPI M8](https://github.com/FRRe-DS/2026-TPI/actions/workflows/validate-m8-openapi.yml/badge.svg)](https://github.com/FRRe-DS/2026-TPI/actions/workflows/validate-m8-openapi.yml)
+[![Validate OpenAPI M9](https://github.com/FRRe-DS/2026-TPI/actions/workflows/validate-m9-openapi.yml/badge.svg)](https://github.com/FRRe-DS/2026-TPI/actions/workflows/validate-m9-openapi.yml)
 
 
 # Desarrollo de Software - 2026
