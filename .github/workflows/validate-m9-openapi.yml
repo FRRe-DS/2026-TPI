@@ -1,12 +1,14 @@
-name: Validate OpenAPI
+name: Validate OpenAPI M9
 
 on:
   pull_request:
-  push:
-    branches: [main]
+    branches: 
+      - main
     paths:
       - '/contratos/m9_reservas/**' 
-
+  push:
+    branches: 
+      - main
 jobs:
   validate:
     runs-on: ubuntu-latest

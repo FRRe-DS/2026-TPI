@@ -1,12 +1,14 @@
-name: Validate OpenAPI
+name: Validate OpenAPI M7
 
 on:
   pull_request:
-  push:
-    branches: [main]
+    branches: 
+      - main
     paths:
       - '/contratos/m7_tarifas/**' 
-
+  push:
+    branches: 
+      - main
 jobs:
   validate:
     runs-on: ubuntu-latest

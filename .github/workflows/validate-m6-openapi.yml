@@ -1,12 +1,14 @@
-name: Validate OpenAPI
+name: Validate OpenAPI M6
 
 on:
   pull_request:
-  push:
-    branches: [main]
+    branches: 
+      - main
     paths:
       - '/contratos/m6_viajes/**' 
-
+  push:
+    branches: 
+      - main
 jobs:
   validate:
     runs-on: ubuntu-latest

@@ -1,11 +1,14 @@
-name: Validate OpenAPI
+name: Validate OpenAPI M3
 
 on:
   pull_request:
-  push:
-    branches: [main]
+    branches: 
+      - main
     paths:
       - '/contratos/m3_conductores/**' 
+  push:
+    branches: 
+      - main
 jobs:
   validate:
     runs-on: ubuntu-latest

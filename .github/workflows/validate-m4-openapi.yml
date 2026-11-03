@@ -1,11 +1,14 @@
-name: Validate OpenAPI
+name: Validate OpenAPI M4
 
 on:
   pull_request:
-  push:
-    branches: [main]
+    branches: 
+      - main
     paths:
       - '/contratos/m4_ubicacion/**' 
+  push:
+    branches: 
+      - main
 jobs:
   validate:
     runs-on: ubuntu-latest
