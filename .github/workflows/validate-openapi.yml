@@ -1,0 +1,46 @@
+name: Validate OpenAPI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install swagger-cli
+        run: npm install -g @apidevtools/swagger-cli
+
+      - name: Validate M2 OpenAPI definition
+        run: swagger-cli validate ./contratos/m2_clientes/openapi.yaml
+
+      - name: Validate M3 OpenAPI definition
+        run: swagger-cli validate ./contratos/m3_conductores/openapi.yaml
+
+      - name: Validate M4 OpenAPI definition
+        run: swagger-cli validate ./contratos/m4_ubicacion/openapi.yaml
+
+      - name: Validate M5 OpenAPI definition
+        run: swagger-cli validate ./contratos/m5_solicitud/openapi.yaml
+
+      - name: Validate M6 OpenAPI definition
+        run: swagger-cli validate ./contratos/m6_viajes/openapi.yaml
+
+      - name: Validate M7 OpenAPI definition
+        run: swagger-cli validate ./contratos/m7_tarifas/openapi.yaml
+
+      - name: Validate M8 OpenAPI definition
+        run: swagger-cli validate ./contratos/m8_notificaciones/openapi.yaml
+
+      - name: Validate M9 OpenAPI definition
+        run: swagger-cli validate ./contratos/m9_servicios/openapi.yaml
